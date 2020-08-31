@@ -8,6 +8,35 @@ public class Student {
     private int numberOfCredits = 0;
     private double gpa = 0.0;
 
+    public boolean equals(Object toBeCompared) {
+        Boolean output = false;
+        if (toBeCompared == this) { output = true; }
+        if (toBeCompared == null) { output = false; }
+        if (toBeCompared.getClass() != getClass()) { output = false; }
+        return output;
+    }
+
+    public String toString(Object toString) {
+        return name + " (Credits: " + numberOfCredits + ", GPA: " + gpa + ")";
+    }
+
+    public String getGradeLevel(Integer credits) {
+        String standing;
+
+        if (credits < 30) { standing = "Freshman"; }
+        else if (credits >= 30 && credits < 60 ) { standing = "Sophomore"; }
+        else if (credits >=60 && credits < 90) { standing = "Junior"; }
+        else { standing = "Senior"; }
+        return standing;
+    }
+
+    public void addGrade(Integer credits, Double grade) {
+        Double workingGrade = this.gpa * this.numberOfCredits;
+        this.numberOfCredits += credits;
+        workingGrade += grade;
+        this.gpa = workingGrade / this.numberOfCredits;
+    }
+
     public Student (String name, int studentId, int numberOfCredits, double gpa) {
         this.name = name;
         this.studentId = studentId;

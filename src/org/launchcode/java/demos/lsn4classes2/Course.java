@@ -7,11 +7,17 @@ public class Course {
     private Teacher instructor;
     private ArrayList<Student> enrolledStudents;
 
-    // TODO: Add your custom 'toString' method here. Make sure it returns a well-formatted String rather than
-    //  just the class fields.
+    public boolean equals(Object toBeCompared) {
+        Boolean output = false;
+        if (toBeCompared == this) { output = true; }
+        if (toBeCompared == null) { output = false; }
+        if (toBeCompared.getClass() != getClass()) { output = false; }
+        return output;
+    }
 
-
-    // TODO: Add your custom 'equals' method here. Consider which fields should match in order to call two
-    //  Course objects equal.
+    public String toString (Object toString) {
+        return "Class Name: " + topic + ", Instructor: " + instructor + ", Class Size: " +
+                enrolledStudents.size() + ".";
+    }
 
 }
