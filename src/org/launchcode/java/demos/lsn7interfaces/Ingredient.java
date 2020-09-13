@@ -3,9 +3,9 @@ package org.launchcode.java.demos.lsn7interfaces;
 import java.util.ArrayList;
 
 public abstract class Ingredient {
-    private String name;
-    private double cost;
-    private ArrayList<String> allergens;
+    public String name;
+    public double cost;
+    public ArrayList<String> allergens;
 
     public Ingredient(String aName, double aCost, ArrayList<String> someAllergens){
         name = aName;
